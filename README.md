@@ -6,9 +6,9 @@
 
 ## An interactive WebAssembly app written in Go
 
-## &nbsp;
+### &nbsp;
 
-### Presents an interactive grid where the user can place different kinds of particle pixels that interact with each other and follow simple rules.
+#### Presents an interactive grid where the user can place different kinds of particle pixels that interact with each other and follow simple rules.
 
 <br>
 
