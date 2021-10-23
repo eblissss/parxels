@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parxels</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Oxygen"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="#" />
+    <script src="wasm_exec.js"></script>
+    <script>
+      const go = new Go();
+      WebAssembly.instantiateStreaming(
+        fetch("main.wasm"),
+        go.importObject
+      ).then((result) => {
+        go.run(result.instance);
+      });
+    </script>
+  </head>
+
+  <body>
+    <canvas
+      id="canvas"
+      width="128"
+      height="128"
+      style="border: 2px solid #111"
+    ></canvas>
+    <div id="buttons">
+      <button class="b" id="sandB">
+        <span class="bspan"> Sand </span>
+      </button>
+      <button class="b" id="waterB">
+        <span class="bspan"> Water </span>
+      </button>
+      <button class="b" id="barrierB">
+        <span class="bspan"> Barrier </span>
+      </button>
+      <button class="b" id="airB">
+        <span class="bspan"> Air </span>
+      </button>
+      <button class="b" id="smokeB">
+        <span class="bspan"> Smoke </span>
+      </button>
+    </div>
+  </body>
+</html>
